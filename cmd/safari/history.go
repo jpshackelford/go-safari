@@ -30,7 +30,9 @@ func doSearchHistory() error {
 		return nil
 	}
 
-	fmt.Fprintf(os.Stderr, "searching for %q ...\n", searchQuery)
+	if !outputJSON {
+		fmt.Fprintf(os.Stderr, "searching for %q ...\n", searchQuery)
+	}
 
 	entries, err := h.Search(searchQuery)
 	if err != nil {
@@ -43,6 +45,7 @@ func doSearchHistory() error {
 			return err
 		}
 		fmt.Fprint(os.Stdout, string(data))
+		fmt.Fprint(os.Stdout, "\n")
 		return nil
 	}
 

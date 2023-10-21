@@ -28,7 +28,7 @@ import (
 
 const (
 	// Version is the version number of the program
-	Version = "0.3.0"
+	Version = "0.3.1-jpshackelford"
 )
 
 var (
@@ -469,6 +469,7 @@ func main() {
 
 	app.FatalIfError(err, "%s", "")
 
-	log.Printf("--------- %v ---------", time.Since(startTime))
-
+	if !outputJSON {
+		log.Printf("--------- %v ---------", time.Since(startTime))
+	}
 }
