@@ -23,7 +23,7 @@ import (
 	"github.com/fatih/color"
 	"gopkg.in/alecthomas/kingpin.v2"
 
-	"github.com/deanishe/go-safari"
+	"github.com/jpshackelford/go-safari"
 )
 
 const (

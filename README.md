@@ -10,7 +10,7 @@ Originally created by [Dean Jackson][dean] in 2016 for use with [Alfred][alfred]
 To install the command-line utility:
 ```console
 brew install go
-go install github.com/deanishe/go-safari/cmd/safari@latest
+go install github.com/jpshackelford/go-safari/cmd/safari@latest
 ```
 The executabile will be installed in $GOBIN or in $HOME/go/bin.
 ```console
@@ -29,6 +29,11 @@ go install github.com/cortesi/modd/cmd/modd@latest
 modd
 ```
 Check out the [modd docs][modd] for more. Tests will run automatically on touched files as you make changes.
+
+To install the development version
+```console
+go build ./cmd/safari && go install ./cmd/safari
+```
 
 John-Mason won't be of much use for questions as he is both a go newb and hasn't worked much with this code base either. Fork away.
 

@@ -17,7 +17,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/deanishe/go-safari/filefinder"
+	"github.com/jpshackelford/go-safari/filefinder"
 
 	// sqlite3 registers itself with sql
 	_ "github.com/mattn/go-sqlite3"
