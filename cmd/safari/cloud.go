@@ -6,7 +6,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/deanishe/go-safari/cloud"
+	"github.com/jpshackelford/go-safari/cloud"
 )
 
 func doListCloudTabs() error {

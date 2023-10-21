@@ -32,7 +32,7 @@ Check out the [modd docs][modd] for more. Tests will run automatically on touche
 
 To install the development version
 ```console
-go build ./cmd/safari && go install ./cmd/safari
+go build -v ./cmd/safari && go install -v ./cmd/safari
 ```
 
 John-Mason won't be of much use for questions as he is both a go newb and hasn't worked much with this code base either. Fork away.

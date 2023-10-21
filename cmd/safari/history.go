@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/deanishe/go-safari/history"
+	"github.com/jpshackelford/go-safari/history"
 )
 
 func doSearchHistory() error {
