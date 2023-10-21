@@ -96,6 +96,7 @@ func init() {
 
 	// History (search)
 	historyCmd = app.Command("history", "Search Safari history").Alias("h")
+	historyCmd.Flag("json", "Output JSON, not text.").Short('j').BoolVar(&outputJSON)
 	historyCmd.Arg("query", "Search query").Required().StringVar(&searchQuery)
 }
 

@@ -17,15 +17,22 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/deanishe/go-safari/filefinder"
+
 	// sqlite3 registers itself with sql
 	_ "github.com/mattn/go-sqlite3"
 )
 
 var (
+
 	// DefaultTabsPath is the path to the default CloudTabs database.
-	DefaultTabsPath = filepath.Join(os.Getenv("HOME"), "Library/Safari/CloudTabs.db")
-	hostname        string
-	tabs            *CloudTabs
+	DefaultTabsPath = filefinder.New([]string{
+		filepath.Join(os.Getenv("HOME"), "Library/Safari/CloudTabs.db"),
+		filepath.Join(os.Getenv("HOME"), "Library/Containers/com.apple.Safari/Data/Library/Safari/CloudTabs.db"),
+	}).FirstExists()
+
+	hostname string
+	tabs     *CloudTabs
 )
 
 func init() {
@@ -137,11 +144,11 @@ type sortData struct {
 
 // Parse the `position` blob. It's zlib-compressed JSON.
 //
-// {
-//   "sortValues": [
-//     {"changeID": int, "sortValue": int, "deviceIdentifier": string}
-//   ]
-// }
+//	{
+//	  "sortValues": [
+//	    {"changeID": int, "sortValue": int, "deviceIdentifier": string}
+//	  ]
+//	}
 func parsePosition(blob []byte) ([]sortData, error) {
 	b := bytes.NewBuffer(blob)
 	r, err := zlib.NewReader(b)
