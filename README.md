@@ -8,25 +8,25 @@ Originally created by [Dean Jackson][dean] in 2016 for use with [Alfred][alfred]
 
 # Usage
 To install the command-line utility:
-```
-$ brew install go
-$ go install github.com/deanishe/go-safari/cmd/safari@latest
+```console
+brew install go
+go install github.com/deanishe/go-safari/cmd/safari@latest
 ```
 The executabile will be installed in $GOBIN or in $HOME/go/bin.
-```
-$ $GOBIN/safari help
+```console
+$GOBIN/safari help
 ```
 To search history use the domain of the site of interest. For example:
-```
-$ safari history google.com
+```console
+safari history google.com
 ```
 
 # Development
 Once you've cloned the repo, download dependencies and run the tests.
-```
-$ cd go-safari
-$ go install github.com/cortesi/modd/cmd/modd@latest
-$ modd
+```console
+cd go-safari
+go install github.com/cortesi/modd/cmd/modd@latest
+modd
 ```
 Check out the [modd docs][modd] for more. Tests will run automatically on touched files as you make changes.
 
