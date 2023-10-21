@@ -28,7 +28,7 @@ import (
 
 const (
 	// Version is the version number of the program
-	Version = "0.3.1-jpshackelford"
+	Version = "0.4.2"
 )
 
 var (
